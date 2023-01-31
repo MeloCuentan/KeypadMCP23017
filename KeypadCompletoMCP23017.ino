@@ -40,19 +40,10 @@ byte pinColumnas[columnas] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 
 Keypad MCP_Keypad = Keypad(makeKeymap(valorBotones), pinFilas, pinColumnas, filas, columnas);
 
 void setup() {
-  // Inicializamos 
+  // Inicializamos
+  Serial.begin(115200);
   mcpFilas.begin_I2C(ADDR_mcpFilas);
   mcpColumnas.begin_I2C(ADDR_mcpColumnas);
-
-  // Configuramos los pines de las filas
-  for (int i = 0; i < filas; i++) {
-    mcpFilas.pinMode(pinFilas[i], OUTPUT);
-    mcpFilas.digitalWrite(pinFilas[i], HIGH);
-  }
-  // Configuramos los pines de las columnas
-  for (int i = 0; i < columnas; i++) {
-    mcpColumnas.pinMode(pinColumnas[i], INPUT_PULLUP);
-  }
 }
 
 void loop() {

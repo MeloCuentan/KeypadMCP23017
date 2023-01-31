@@ -4,6 +4,10 @@
 Adafruit_MCP23X17 mcpFilas;
 Adafruit_MCP23X17 mcpColumnas;
 
+// Añadimos las direcciones I2C de cada multiplexor
+const int ADDR_mcpFilas = 0x20;
+const int ADDR_mcpColumnas = 0x21;
+
 // Establecemosd la configuracion de la matriz
 const int filas = 16;
 const int columnas = 16;
@@ -14,8 +18,8 @@ byte pinColumnas[columnas] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 
 
 void setup() {
   // Inicializamos 
-  mcpFilas.begin_I2C(0x20);
-  mcpColumnas.begin_I2C(0x21);
+  mcpFilas.begin_I2C(ADDR_mcpFilas);
+  mcpColumnas.begin_I2C(ADDR_mcpColumnas);
 
   // Configuramos los pines de las filas
   for (int i = 0; i < filas; i++) {

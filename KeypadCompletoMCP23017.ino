@@ -61,21 +61,4 @@ void loop() {
   if(botonPulsado) {
     Serial.println(botonPulsado);
   }
-
-/*  for (int i = 0; i < filas; i++) {   // Recorremos todas las filas
-    mcpFilas.digitalWrite(pinFilas[i], LOW);
-
-    for (int j = 0; j < columnas; j++) {  // Recorremos todas las columnas
-      if (!mcpColumnas.digitalRead(pinColumnas[j])) {   // Si ha sido presionado
-        Serial.print("Se ha presionado la fila ");
-        Serial.print(i);
-        Serial.print(", columna ");
-        Serial.println(j);
-      }
-    }
-
-    // Volvemos a poner la fila actual en estado alto
-    mcpFilas.digitalWrite(pinFilas[i], HIGH);
-  }
-  */
 }

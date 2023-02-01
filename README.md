@@ -6,5 +6,5 @@ Se puede montar tal cual pero lo ideal es añadir un diodo (no led) a cada pulsa
 Con este diodo evitaremos que al pulsar varios pulsadores simultáneamente, se detecten pulsaciones de otros que no debería
 
 El archivo matrizMultiplexores.ino crea una matriz con los pines de filas y columnas, que 
-luego recorreremos con bucle for en el loop, por el contrario, el archivo KeypadCompletoMCP23017.ino tiene 
-agregada la matriz con la librería Keypad con valores que van de 0 a 255.
+luego recorreremos con bucle for en el loop, y en la pruebas realizadas tarda aproximadamente 150ms en recorrer todo el bucle con un arduino NANO.
+Tiene agregada la matriz con valores que van de 0 a 255.
